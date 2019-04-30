@@ -8,33 +8,33 @@ public:
 	int age;
 	Person();
 	Person(const char* _name, int _age);
-	Person(const Person&obj);
+	Person(const Person& obj);
 	~Person();
 	Person& operator=(const Person& obj);
 	void Showdata();
 };
 Person::Person(){
-	cout << "ÀÎÀÚ ¾ø´Â »ı¼ºÀÚ" << endl;
+	cout << "ì¸ì ì—†ëŠ” ìƒì„±ì" << endl;
 	name = new char[MAX_NAME];
 	name[0] = NULL;
 	age = 0;
 }
 Person::Person(const char* _name, int _age) {
-	cout << "ÀÎÀÚ ÀÖ´Â »ı¼ºÀÚ" << endl;
+	cout << "ì¸ì ìˆëŠ” ìƒì„±ì" << endl;
 	int len = strlen(_name);
 	this->name = new char[len + 1];
 	strcpy_s(this->name, len + 1, _name);
 	this->age = _age;
 }
 Person::Person(const Person&obj) {
-	cout << "±íÀº º¹»ç »ı¼ºÀÚ" << endl;
+	cout << "ê¹Šì€ ë³µì‚¬ ìƒì„±ì" << endl;
 	int len = strlen(obj.name);
 	this->name = new char[len + 1];
 	strcpy_s(this->name, len + 1, obj.name);
 	this->age = obj.age;
 }
 Person::~Person() {
-	cout << "¼Ò¸êÀÚ" << endl;
+	cout << "ì†Œë©¸ì" << endl;
 	delete[] this->name; this->name = NULL;
 }
 Person& Person::operator=(const Person& obj) {
@@ -49,9 +49,9 @@ void Person::Showdata() {
 }
 int main()
 {
-	Person P1("°­¹Î", 21);
+	Person P1("ê°•ë¯¼", 21);
 	P1.Showdata();
-	Person P2("³ªµ¿¹Î", 24);
+	Person P2("ë‚˜ë™ë¯¼", 24);
 	P2.Showdata();
 	P1 = P2;
 	P1.Showdata();
